@@ -21,6 +21,12 @@ export default function Home() {
         >
           Agent Board
         </Link>
+        <Link
+          href="/analytics"
+          className="rounded-md border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-slate-700 hover:bg-slate-50"
+        >
+          Analytics
+        </Link>
       </div>
     </main>
   );

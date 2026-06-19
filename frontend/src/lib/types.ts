@@ -7,6 +7,8 @@ export type Urgency = (typeof URGENCIES)[number];
 export const STATUSES = ["Open", "In Progress", "Resolved", "Closed"] as const;
 export type Status = (typeof STATUSES)[number];
 
+export const TERMINAL_STATUSES_LIST: string[] = ["Resolved", "Closed"];
+
 export interface StatusHistoryEntry {
   status: string;
   timestamp: string;
