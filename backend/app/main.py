@@ -1,4 +1,5 @@
 import datetime as dt
+import os
 
 from fastapi import Depends, FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
@@ -25,9 +26,14 @@ TERMINAL_STATUSES = {"Resolved", "Closed"}
 
 app = FastAPI(title="The/Nudge Ticketing API")
 
+_extra_origin = os.environ.get("FRONTEND_ORIGIN")
+_allow_origins = ["http://localhost:3000"]
+if _extra_origin:
+    _allow_origins.append(_extra_origin)
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],
+    allow_origins=_allow_origins,
     allow_methods=["*"],
     allow_headers=["*"],
 )
