@@ -1,9 +1,10 @@
-from sentence_transformers import SentenceTransformer
+from fastembed import TextEmbedding
 
 # Loaded once at import time so FastAPI startup (Day 2) and these scripts
-# both pay the model-load cost exactly once, never per-request.
-_model = SentenceTransformer("all-MiniLM-L6-v2")
+# both pay the model-load cost exactly once, never per-request. ONNX runtime
+# instead of torch keeps this within Render free tier's 512MB RAM limit.
+_model = TextEmbedding("sentence-transformers/all-MiniLM-L6-v2")
 
 
 def embed(text: str) -> list[float]:
-    return _model.encode(text, normalize_embeddings=True).tolist()
+    return next(_model.embed([text])).tolist()
