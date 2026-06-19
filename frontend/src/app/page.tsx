@@ -8,12 +8,20 @@ export default function Home() {
         Raise IT, HR, Finance, or Admin tickets — and see if someone has already solved your
         issue before you submit.
       </p>
-      <Link
-        href="/new"
-        className="mt-6 rounded-md bg-indigo-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500"
-      >
-        Raise a Ticket
-      </Link>
+      <div className="mt-6 flex gap-3">
+        <Link
+          href="/new"
+          className="rounded-md bg-indigo-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500"
+        >
+          Raise a Ticket
+        </Link>
+        <Link
+          href="/agent"
+          className="rounded-md border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-slate-700 hover:bg-slate-50"
+        >
+          Agent Board
+        </Link>
+      </div>
     </main>
   );
 }
