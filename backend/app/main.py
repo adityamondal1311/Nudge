@@ -39,6 +39,11 @@ app.add_middleware(
 )
 
 
+@app.get("/")
+def health():
+    return {"status": "ok"}
+
+
 def get_db():
     db = SessionLocal()
     try:
