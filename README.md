@@ -2,6 +2,8 @@
 
 An internal IT/HR/Finance/Admin support ticketing tool built for The/Nudge Institute's AI Product Engineer take-home. The core idea: the AI layer is designed to prevent tickets from being created, not just to process them faster — before an employee submits a ticket, they see the top 3 previously resolved tickets that look similar to their problem.
 
+<img src="docs/screenshots/homepage.png" width="760" alt="The/Nudge ticketing tool homepage" />
+
 See [`Overview.md`](Overview.md) for the full architecture write-up and design decisions.
 
 ## Live deployment
@@ -10,6 +12,26 @@ See [`Overview.md`](Overview.md) for the full architecture write-up and design d
 - Backend (Render): https://nudge-ticketing-backend.onrender.com/docs
 
 The Render free-tier instance sleeps after 15 minutes of inactivity — the first request after idle may take 30–60s to wake up.
+
+## How It Works
+
+### Find Similar Resolved Issues
+
+The core differentiator: before a ticket can even be submitted, the tool searches previously resolved tickets and surfaces close matches, preventing duplicate tickets from being created in the first place.
+
+<img src="docs/screenshots/similar-issues.webp" width="760" alt="Similar resolved tickets shown before submitting a new ticket" />
+
+### Agent Board & Lifecycle
+
+A four-column board (Open / In Progress / Resolved / Closed) tracks ticket lifecycle, with a hard gate requiring resolution notes before a ticket can move to Resolved or Closed.
+
+<img src="docs/screenshots/agent-board.png" width="760" alt="Agent kanban board with resolution-notes gate" />
+
+## Analytics
+
+Tracks ticket count by category and status, average resolution time, and the percentage breakdown of recurring issue categories.
+
+<img src="docs/screenshots/analytics.webp" width="760" alt="Analytics dashboard showing ticket counts and resolution metrics" />
 
 ## Tech stack
 
