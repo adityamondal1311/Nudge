@@ -2,7 +2,7 @@
 
 An internal IT/HR/Finance/Admin support ticketing tool built for The/Nudge Institute's AI Product Engineer take-home. The core idea: the AI layer is designed to prevent tickets from being created, not just to process them faster — before an employee submits a ticket, they see the top 3 previously resolved tickets that look similar to their problem.
 
-See [`SUBMISSION_NOTE.md`](SUBMISSION_NOTE.md) for the full architecture write-up and design decisions, and [`RECORDING_SCRIPT.md`](RECORDING_SCRIPT.md) for the demo walkthrough script.
+See [`Overview.md`](Overview.md) for the full architecture write-up and design decisions.
 
 ## Live deployment
 
